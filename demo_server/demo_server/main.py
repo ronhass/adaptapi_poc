@@ -11,6 +11,10 @@ class ApiInput(BaseModel):
     user: str
 
 
+class ApiOutput(BaseModel):
+    message: str
+
+
 @app.get("/api/latest/")
-def greet_user(input: ApiInput) -> str:
-    return f"{input.greeting} {input.user}"
+def greet_user(input: ApiInput) -> ApiOutput:
+    return ApiOutput(message=f"{input.greeting} {input.user}")
