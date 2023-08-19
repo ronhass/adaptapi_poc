@@ -25,4 +25,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.adaptapi."/api/latest/"]
-v1 = []
+v1 = ["demo_server.adaptapi_versions.0001_add_greeting_field"]

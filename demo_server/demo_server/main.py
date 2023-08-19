@@ -7,9 +7,10 @@ app.add_middleware(AdaptAPIMiddleware)
 
 
 class ApiInput(BaseModel):
+    greeting: str
     user: str
 
 
 @app.get("/api/latest/")
 def greet_user(input: ApiInput) -> str:
-    return f"Hello {input.user}"
+    return f"{input.greeting} {input.user}"
